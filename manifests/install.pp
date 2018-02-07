@@ -10,5 +10,5 @@ class jenkins::install {
     ensure  => installed,
     require => Class['jenkins::apt_repo']
   }
-  
+
 }
