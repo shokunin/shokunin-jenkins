@@ -2,6 +2,7 @@
 # ===========================
 class jenkins (
   Boolean $manage_apt_repo = true,
+  Array   $prereqs         = ['openjdk-9-jre-headless'],
   String  $repo_url        = 'http://pkg.jenkins-ci.org/debian',
   String  $repo_key_id     = '150FDE3F7787E7D11EF4E12A9B7D32F2D50582E6',
   String  $repo_key_source = 'http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key',
