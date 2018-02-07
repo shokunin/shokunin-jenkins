@@ -7,10 +7,10 @@ class jenkins (
   String  $repo_key_source = 'http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key',
 ){
 
-  include jenkins::apt_repo
-  include jenkins::install
-  include jenkins::configure
-  include jenkins::service
+  contain jenkins::apt_repo
+  contain jenkins::install
+  contain jenkins::configure
+  contain jenkins::service
 
   Class['::jenkins::apt_repo']
   -> Class['::jenkins::install']
