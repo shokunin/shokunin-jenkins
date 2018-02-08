@@ -31,5 +31,10 @@ class jenkins::postinstall {
       require      => [ Rvm_system_ruby['ruby-2.3.3'], Rvm_gemset['ruby-2.3.3@packer'] ]
   }
 
+  exec { 'add_jenkins_to_rvm_group':
+    unless  => '/usr/bin/getent group rvm |/usr/bin/cut -d: -f4 |/bin/grep -q jenkins',
+    command => '/usr/sbin/usermod -a -G rvm jenkins',
+    require      => [ Rvm_system_ruby['ruby-2.3.3'], Rvm_gemset['ruby-2.3.3@packer'] ]
+  }
 
 }
