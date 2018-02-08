@@ -26,6 +26,6 @@ describe 'jenkins' do
     it { is_expected.to contain_group('jenkins') }
     it { is_expected.to contain_package('jenkins') }
     it { is_expected.to contain_service('jenkins').with('ensure' => 'running', 'enable' => true) }
-    it { should contain_file('/home/jenkins/.gitconfig').with_content(/jenkins@testjenkinsbox/) }
+    it { should contain_file('/var/lib/jenkins/.gitconfig').with_content(/jenkins@testjenkinsbox/) }
   end
 end
