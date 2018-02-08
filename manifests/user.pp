@@ -7,11 +7,10 @@ class jenkins::user {
   }
 
   user { 'jenkins':
-    ensure     => present,
-    groups     => 'jenkins',
-    require    => Group['jenkins'],
-    managehome => true,
-    home       => '/var/lib/jenkins',
+    ensure  => present,
+    groups  => 'jenkins',
+    require => Group['jenkins'],
+    home    => '/var/lib/jenkins',
   }
 
   file { '/var/lib/jenkins/.gitconfig':
