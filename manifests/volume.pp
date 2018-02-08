@@ -17,8 +17,14 @@ class jenkins::volume {
     }
 
     file_line { 'jenkins_mount':
-      path => '/etc/fstab',
-      line => "${jenkins::disk_device} ${jenkins::disk_mount} ext4  defaults,nofail 0  2"
+      path   => '/etc/fstab',
+      line   => "${jenkins::disk_device} ${jenkins::disk_mount} ext4  defaults,nofail 0  2",
+      notify =>  Exec['mount_jenkins']
+    }
+
+    exec { 'mount_jenkins':
+      command      => "/bin/mount ${jenkins::disk_mount}",
+      refresh_only =>  true,
     }
 
   }
