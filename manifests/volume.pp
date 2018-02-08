@@ -23,8 +23,8 @@ class jenkins::volume {
     }
 
     exec { 'mount_jenkins':
-      command      => "/bin/mount ${jenkins::disk_mount}",
-      refresh_only =>  true,
+      command     => "/bin/mount ${jenkins::disk_mount}",
+      refreshonly => true,
     }
 
   }
