@@ -16,12 +16,14 @@ class jenkins (
   contain jenkins::service
   contain jenkins::volume
   contain jenkins::user
+  contain jenkins::postinstall
 
   Class['::jenkins::apt_repo']
   -> Class['::jenkins::user']
   -> Class['::jenkins::volume']
   -> Class['::jenkins::install']
   -> Class['::jenkins::configure']
+  -> Class['::jenkins::postinstall']
   -> Class['::jenkins::service']
 
 }
