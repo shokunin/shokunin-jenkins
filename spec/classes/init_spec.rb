@@ -20,7 +20,9 @@ describe 'jenkins' do
   end
   context 'with default values for all parameters' do
     it { should contain_class('jenkins') }
-    it { is_expected.to contain_package('openjdk-9-jre-headless') }
+    it { is_expected.to contain_package('openjdk-8-jre-headless') }
+    it { is_expected.to contain_user('jenkins') }
+    it { is_expected.to contain_group('jenkins') }
     it { is_expected.to contain_package('jenkins') }
     it { is_expected.to contain_service('jenkins').with('ensure' => 'running', 'enable' => true) }
   end
