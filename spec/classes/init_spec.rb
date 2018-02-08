@@ -5,6 +5,9 @@ describe 'jenkins' do
       'fqdn' => 'testjenkinsbox',
       'osfamily' => 'Debian',
       'operatingsystem' => 'Ubuntu',
+      'architecture' => 'amd64',
+      'staging_http_get' => 'wget',
+      'path' => '/tmp',
       'root_home' => '/tmp',
       'kernel' => 'Linux',
       'os' => {
