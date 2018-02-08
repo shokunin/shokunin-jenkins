@@ -5,6 +5,8 @@ fixtures:
     lvm: git://github.com/puppetlabs/puppetlabs-lvm.git
     tfenv: git://github.com/SergK/puppet-tfenv
     vcsrepo: git://github.com/puppetlabs/puppetlabs-vcsrepo
+    rvm: git://github.com/maestrodev/puppet-rvm
+    gnupg: git://github.com/dgolja/golja-gnupg
   symlinks:
     apt: "#{source_dir}"
     lvm: "#{source_dir}"

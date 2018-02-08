@@ -4,6 +4,9 @@ describe 'jenkins' do
     {
       'fqdn' => 'testjenkinsbox',
       'osfamily' => 'Debian',
+      'operatingsystem' => 'Ubuntu',
+      'root_home' => '/tmp',
+      'kernel' => 'Linux',
       'os' => {
         'name'    => 'Ubuntu',
         'family'  => 'Debian',
