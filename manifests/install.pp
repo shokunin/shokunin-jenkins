@@ -2,7 +2,9 @@
 # ===========================
 class jenkins::install {
 
+  notify {"DTM: ${jenkins::prereqs}"}
   each($jenkins::prereqs) |$pkg| {
+    notify {"DTM: ${$pkg}"}
     ensure_packages($pkg)
   }
 
