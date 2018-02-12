@@ -9,4 +9,8 @@ if [ -s "/usr/local/rvm/scripts/rvm" ] ; then
 
 fi
 
+if [ -s "${HOME}/.rvmrc" ]; then
+  source "${HOME}/.rvmrc"
+fi
+
 export PS1="\u@\h:\W "
