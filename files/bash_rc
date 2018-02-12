@@ -4,13 +4,13 @@
 
 if [ -s "/usr/local/rvm/scripts/rvm" ] ; then
 
-  source "/usr/local/rvm/scripts/rvm"
+  . "/usr/local/rvm/scripts/rvm"
   export PATH=${PATH}:/usr/local/rvm/bin
 
 fi
 
 if [ -s "${HOME}/.rvmrc" ]; then
-  source "${HOME}/.rvmrc"
+  . "${HOME}/.rvmrc"
 fi
 
 export PS1="\u@\h:\W "
