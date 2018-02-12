@@ -2,11 +2,11 @@
 # 			Puppet Controlled
 #############################################################################
 
-if [ -s "/usr/local/rvm/scripts/rvm"] ; then
+if [ -s "/usr/local/rvm/scripts/rvm" ] ; then
 
   source "/usr/local/rvm/scripts/rvm"
-  export PATH=/usr/local/rvm/bin:${PATH}
-  
+  export PATH=${PATH}:/usr/local/rvm/bin
+
 fi
 
 export PS1="\u@\h:\W "
