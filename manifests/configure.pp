@@ -10,4 +10,29 @@ class jenkins::configure {
     content => template('jenkins/gitconfig.erb'),
   }
 
+  file { '/var/lib/jenkins/.bash_profile':
+    ensure => present,
+    owner  => 'jenkins',
+    group  => 'jenkins',
+    mode   => '0644',
+    source => 'puppet:///modules/jenkins/bash_profile',
+  }
+
+  file { '/var/lib/jenkins/.bashrc':
+    ensure => present,
+    owner  => 'jenkins',
+    group  => 'jenkins',
+    mode   => '0644',
+    source => 'puppet:///modules/jenkins/bash_rc',
+  }
+
+  file { '/var/lib/jenkins/.rvmrc':
+    ensure => present,
+    owner  => 'jenkins',
+    group  => 'jenkins',
+    mode   => '0644',
+    source => 'puppet:///modules/jenkins/rvmrc',
+  }
+
+
 }
