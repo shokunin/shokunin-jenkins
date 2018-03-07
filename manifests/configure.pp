@@ -35,4 +35,10 @@ class jenkins::configure {
   }
 
 
+  if $::jenkins_has_consul { 
+    notify { 'DTM: Enabled': }
+  } else {
+    notify { 'DTM: Enabled': }
+  }
+
 }
