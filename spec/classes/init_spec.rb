@@ -22,7 +22,8 @@ describe 'jenkins' do
                                 'distrelease'     => '16.04',
                                 'majdistrelease'  => '16.04'
                               }
-      }
+      },
+      'jenkins_has_consul' => true
     }
   end
   context 'with default values for all parameters' do
